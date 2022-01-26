@@ -12,9 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Presenters.Posts;
 
-namespace PortfolioCMS
+namespace MvxPortfolioManager.Wpf
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -24,19 +23,6 @@ namespace PortfolioCMS
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        public void GetPosts(object sender, RoutedEventArgs e)
-        {
-            var postsPresenters = new PostPresenters();
-            var posts = postsPresenters.GetAllPosts();
-
-            int count = 0;
-            foreach(var post in posts)
-            {
-                count++;
-                text1.Text = count.ToString();
-            }
         }
     }
 }

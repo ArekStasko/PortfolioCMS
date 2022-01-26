@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Presenters.User
+namespace MvxPortfolioManager.Core.Models
 {
-    internal class UserPresenters
+    public class User
     {
+        public string Username { get; } 
     }
 }
