@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MvxPortfolioManager.Core.Models
+namespace DataAccess.Services
 {
-    public class User
+    internal class UserServices
     {
-        public string Username { get; } 
     }
 }
