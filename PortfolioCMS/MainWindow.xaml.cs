@@ -31,6 +31,7 @@ namespace PortfolioCMS
         {
             var postsView = new PostsView();
             postsView.Show();
+            this.Close();
         }
 
         public void Login(object sender, RoutedEventArgs e)

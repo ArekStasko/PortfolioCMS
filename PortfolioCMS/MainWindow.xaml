@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:PortfolioCMS"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="Portfolio CMS - Login" Height="450" Width="350">
-    <Grid Background="#FF171717">
+        Title="Portfolio CMS - Login" Height="450" Width="350" Background="#0d1117">
+    <Grid >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="60" />
             <ColumnDefinition Width="*" />
@@ -21,11 +21,11 @@
             <RowDefinition Height="100"/>
             <RowDefinition Height="60" />
         </Grid.RowDefinitions>
-        <TextBlock Grid.Column="1" Grid.Row="1" Text="Login" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#FFD9E6E6"/>
-        <Label  Grid.Column="1" Grid.Row="2" Content="Username" Margin="10,-10" Foreground="#FFD9E6E6" />
+        <TextBlock Grid.Column="1" Grid.Row="1" Text="Login" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#f0f6fc"/>
+        <Label  Grid.Column="1" Grid.Row="2" Content="Username" Margin="10,-10" Foreground="#f0f6fc" />
         <TextBox Grid.Column="1" Grid.Row="2" Width="200" Height="40" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20" />
-        <Label  Grid.Column="1" Grid.Row="3" Content="Password" Margin="10,-10" Foreground="#FFD9E6E6" />
+        <Label  Grid.Column="1" Grid.Row="3" Content="Password" Margin="10,-10" Foreground="#f0f6fc" />
         <PasswordBox Grid.Column="1" Grid.Row="3" Width="200" Height="40" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20" />
-        <Button Click="Login" Grid.Column="1" Grid.Row="4" Content="Go" Width="200" Height="40" Foreground="#FFD9E6E6" Background="{x:Null}" BorderBrush="#FF75B6E7" FontWeight="Bold" FontSize="16" Cursor="Hand" />
+        <Button Click="Login" Grid.Column="1" Grid.Row="4" Content="Go" Width="200" Height="40" Foreground="#FFD9E6E6" Background="#21262d" BorderBrush="#FF75B6E7" FontWeight="Bold" FontSize="16" Cursor="Hand" />
     </Grid>
 </Window>
