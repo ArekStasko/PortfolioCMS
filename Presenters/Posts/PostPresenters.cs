@@ -9,12 +9,12 @@ namespace Presenters.Posts
     {
         private PostServices _service;
 
-        public PostPresenters()
+        public PostPresenters(string db)
         {
-            _service = new PostServices("TestPosts");
+            _service = new PostServices(db);
         }
 
-        public IEnumerable<IPost> GetAll()
+        public IEnumerable<Post> GetAll()
         {
             var posts = _service.GetPosts();
             foreach(var post in posts)
@@ -23,17 +23,22 @@ namespace Presenters.Posts
             }
         }
 
-        public void Update(Guid id)
+        public void Update(Post post)
         {
-            var post = _service.GetPostByID(id);
             _service.UpdatePost(post);
         }
 
-        public IPost Create()
+        public void Create(string title, string sumDescription, string description, string GitLink, string? photoLink)
         {
-            var post = new Post();
+            var post = new Post()
+            {
+                Title = title,
+                SummaryDescription = sumDescription,
+                Description = description,
+                GithubLink = GitLink,
+                PhotoLink = photoLink ?? "https://res.cloudinary.com/daidpbgul/image/upload/v1643386473/depositphotos_318221368-stock-illustration-missing-picture-page-for-website_q0uwgh.jpg"
+            };
             _service.InsertPost(post);
-            return post;
         }
 
         public void Delete(Guid id)

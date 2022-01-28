@@ -22,6 +22,7 @@ namespace PortfolioCMS
     public partial class PostsView : Window
     {
         private List<IPost> _posts;
+        private Guid _id;
         private PostPresenters _postsPrezenters;
 
         public IEnumerable<IPost> Posts
@@ -33,16 +34,32 @@ namespace PortfolioCMS
             }
         }
 
+        public Guid Id
+        {
+            get => _id;
+            set
+            {
+                _id = value;
+            }
+        }
+
         public PostsView()
         {
             InitializeComponent();
-            _postsPrezenters = new PostPresenters();
+            _postsPrezenters = new PostPresenters("TestPosts");
         }
-        
+
         private void icPosts_Loaded(object sender, RoutedEventArgs e)
         {
             Posts = _postsPrezenters.GetAll();
             icPosts.ItemsSource = Posts;
+        }
+
+        private void DeletePost_Click(object sender, RoutedEventArgs e)
+        {
+            Button? button = sender as Button;
+            Id = (Guid)button.Tag;
+            _postsPrezenters.Delete(Id);
         }
     }
 }

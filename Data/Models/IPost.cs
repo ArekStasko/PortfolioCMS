@@ -9,7 +9,6 @@ namespace Data.Models
         public string GithubLink { get; set; }
         public string SummaryDescription { get; set; }
         public string PhotoLink { get; set; }
-        public string VideoLink { get; set; }
         public string Description { get; set; }
     }
 }
