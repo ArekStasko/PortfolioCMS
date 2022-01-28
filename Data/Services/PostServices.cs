@@ -21,7 +21,7 @@ namespace Data.Services
         }
 
         public void InsertPost(Post post)
-        {
+        { 
             var collection = GetPostsCollection();
             collection.InsertOne(post);
         }

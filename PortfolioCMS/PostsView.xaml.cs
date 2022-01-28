@@ -49,17 +49,20 @@ namespace PortfolioCMS
             _postsPrezenters = new PostPresenters("TestPosts");
         }
 
-        private void icPosts_Loaded(object sender, RoutedEventArgs e)
-        {
-            Posts = _postsPrezenters.GetAll();
-            icPosts.ItemsSource = Posts;
-        }
+        private void icPosts_Loaded(object sender, RoutedEventArgs e) => Load_Elements();
 
         private void DeletePost_Click(object sender, RoutedEventArgs e)
         {
             Button? button = sender as Button;
             Id = (Guid)button.Tag;
             _postsPrezenters.Delete(Id);
+            Load_Elements();
+        }
+
+        private void Load_Elements()
+        {
+            Posts = _postsPrezenters.GetAll();
+            icPosts.ItemsSource = Posts;
         }
     }
 }

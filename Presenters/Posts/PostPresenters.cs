@@ -14,7 +14,7 @@ namespace Presenters.Posts
             _service = new PostServices(db);
         }
 
-        public IEnumerable<Post> GetAll()
+        public IEnumerable<IPost> GetAll()
         {
             var posts = _service.GetPosts();
             foreach(var post in posts)

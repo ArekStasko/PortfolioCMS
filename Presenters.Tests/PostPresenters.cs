@@ -2,6 +2,7 @@ using NUnit.Framework;
 using Presenters.Posts;
 using FluentAssertions;
 using System.Linq;
+using Data.Models;
 
 namespace Presenters.Tests
 {
@@ -80,7 +81,7 @@ namespace Presenters.Tests
             post.Title = "elttsiTeT";
             post.SummaryDescription = "noitpircseD yrammuS";
             post.Description = "noitpircseD noitpircseD noitpircseD";
-            _presenters.Update(post);
+            _presenters.Update((Post)post);
 
         }
     }
