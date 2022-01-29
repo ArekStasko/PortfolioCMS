@@ -59,7 +59,12 @@ namespace PortfolioCMS
             Load_Elements();
         }
 
-        private void Load_Elements()
+        private void OpenCreateView_Click(object sender, RoutedEventArgs e)
+        {
+            var createView = new CreateView(this);
+            createView.Show();
+        }
+        internal void Load_Elements()
         {
             Posts = _postsPrezenters.GetAll();
             icPosts.ItemsSource = Posts;

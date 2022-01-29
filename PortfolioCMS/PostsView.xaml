@@ -7,7 +7,11 @@
         mc:Ignorable="d"
         Title="Portfolio Posts" Height="800" Width="1350" Background="#0d1117">
     <Grid Margin="10">
-        <ItemsControl HorizontalAlignment="Left" Loaded="icPosts_Loaded" Name="icPosts" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="200"/>
+        </Grid.ColumnDefinitions>
+        <ItemsControl Grid.Column="0" HorizontalAlignment="Left" Loaded="icPosts_Loaded" Name="icPosts" >
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
                     <WrapPanel Margin="10" Width="300" Height="350" Background="#161b22" TextBlock.Foreground="#f0f6fc">
@@ -39,5 +43,11 @@
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="200"/>
+            </Grid.RowDefinitions>
+            <Button Grid.Row="0" Click="OpenCreateView_Click" Width="100" Height="50" Foreground="#FFD9E6E6" Background="#21262d" BorderBrush="#FF75B6E7" Cursor="Hand" Content="Add Post" FontWeight="Bold" FontSize="20"/>
+        </Grid>
     </Grid>
 </Window>
