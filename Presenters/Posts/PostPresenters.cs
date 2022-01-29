@@ -23,6 +23,12 @@ namespace Presenters.Posts
             }
         }
 
+        public Post GetPostByID(Guid Id)
+        {
+            var post = _service.GetPostByID(Id);
+            return post;
+        }
+
         public void Update(Post post)
         {
             _service.UpdatePost(post);

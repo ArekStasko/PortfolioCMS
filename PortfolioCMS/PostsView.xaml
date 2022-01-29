@@ -35,7 +35,7 @@
                                     <ColumnDefinition Width="50" />
                                 </Grid.ColumnDefinitions>
                                 <Button Grid.Column="1" Width="40" Height="40" Content="Github" Foreground="#FFD9E6E6" Background="#21262d" BorderBrush="#FF75B6E7" Cursor="Hand" />
-                                <Button Grid.Column="2" Width="40" Height="40" Content="Edit" Foreground="#FFD9E6E6" Background="#21262d" BorderBrush="#FF75B6E7" Cursor="Hand" />
+                                <Button Tag="{Binding _id}" Click="EditPost_Click" Grid.Column="2" Width="40" Height="40" Content="Edit" Foreground="#FFD9E6E6" Background="#21262d" BorderBrush="#FF75B6E7" Cursor="Hand" />
                                 <Button Tag="{Binding _id}" Click="DeletePost_Click" Grid.Column="3" Width="40" Height="40" Content="Delete" Foreground="#FFD9E6E6" Background="#21262d" BorderBrush="#FF75B6E7" Cursor="Hand" />
                             </Grid>
                         </Grid>

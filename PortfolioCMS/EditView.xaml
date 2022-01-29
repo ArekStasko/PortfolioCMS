@@ -5,8 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PortfolioCMS"
         mc:Ignorable="d"
-        Title="EditView" Height="450" Width="800">
+        ResizeMode="NoResize"
+        Title="Edit Post" Height="650" Width="450" Background="#0d1117">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="60" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="60"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="80" />
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="1" Grid.Row="0" Text="Edit Post" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Top" Foreground="#f0f6fc"/>
+        <Label  Grid.Column="1" Grid.Row="1" Content="Title" Margin="10,-10" Foreground="#f0f6fc" FontSize="16" />
+        <TextBox Text="{Binding Title}" Name="Title" Grid.Column="1" Grid.Row="1" Width="300" Height="40" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="20" />
+        <Label Grid.Column="1" Grid.Row="2" Content="Summary Description" Margin="10,-10" Foreground="#f0f6fc" FontSize="16" />
+        <TextBox Text="{Binding SummaryDescription}" Name="SumDescription" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" Grid.Column="1" Grid.Row="2" Width="300" Height="70" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" FontSize="15" />
+        <Label  Grid.Column="1" Grid.Row="3" Content="Description" Margin="10,-15" Foreground="#f0f6fc" FontSize="16" />
+        <TextBox Text="{Binding Description}" Name="Description" TextWrapping="Wrap" VerticalScrollBarVisibility="Visible" Grid.Column="1" Grid.Row="3" Width="300" Height="90" HorizontalContentAlignment="Left" VerticalContentAlignment="Top" FontSize="15" />
+        <Label  Grid.Column="1" Grid.Row="4" Content="Github Link" Margin="10,-10" Foreground="#f0f6fc" FontSize="16" />
+        <TextBox Text="{Binding GithubLink}" Name="GitLink" Grid.Column="1" Grid.Row="4" Width="300" Height="40" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="18" />
+        <Label  Grid.Column="1" Grid.Row="5" Content="Image Link" Margin="10,-10" Foreground="#f0f6fc" FontSize="16" />
+        <TextBox Text="{Binding PhotoLink}" Name="ImgLink" Grid.Column="1" Grid.Row="5" Width="300" Height="40" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" FontSize="18" />
+        <Button Click="Edit_Click" Grid.Column="1" Grid.Row="6" Content="Edit" Width="200" Height="40" Foreground="#FFD9E6E6" Background="#21262d" BorderBrush="#FF75B6E7" FontWeight="Bold" FontSize="20" Cursor="Hand" />
     </Grid>
 </Window>

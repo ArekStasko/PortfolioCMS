@@ -59,6 +59,14 @@ namespace PortfolioCMS
             Load_Elements();
         }
 
+        private void EditPost_Click(object sender, RoutedEventArgs e)
+        {
+            Button? button = sender as Button;
+            Id = (Guid)button.Tag;
+            var editView = new EditView(this, Id);
+            editView.Show();
+        }
+
         private void OpenCreateView_Click(object sender, RoutedEventArgs e)
         {
             var createView = new CreateView(this);

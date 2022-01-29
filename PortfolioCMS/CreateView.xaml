@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PortfolioCMS"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="CreateView" Height="650" Width="450" Background="#0d1117">
+        Title="Create Post" Height="650" Width="450" Background="#0d1117">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="60" />
