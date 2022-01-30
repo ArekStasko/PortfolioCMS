@@ -4,11 +4,17 @@ namespace Presenters.User
 {
     public class UserPresenters
     {
-        public bool AuthenticateUser(string username, string password)
+        private UserServices _service;
+
+        public UserPresenters(string db)
         {
-            //TODO validation for values
-            var service = new UserServices();
-            return service.CheckAuthentication(username, password);
+            _service = new UserServices(db);
+        }
+
+        public bool AuthenticateUser(string usr, string psw)
+        {
+            if (string.IsNullOrWhiteSpace(usr) || string.IsNullOrWhiteSpace(psw)) return false;
+            return _service.CheckAuthentication(usr, psw);
         }
 
     }

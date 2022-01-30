@@ -36,8 +36,9 @@ namespace PortfolioCMS
 
         public void Login(object sender, RoutedEventArgs e)
         {
-            var userPresenters = new UserPresenters();
-            if (userPresenters.AuthenticateUser("username", "password")) 
+            var userPresenters = new UserPresenters("TestPosts");
+            userPresenters.AuthenticateUser(Usn.Text, Psw.Password);
+            if (userPresenters.AuthenticateUser(Usn.Text, Psw.Password)) 
                 Login_Succeed();
             else
             {
@@ -45,10 +46,10 @@ namespace PortfolioCMS
                 string caption = "Wrong Data";
                 MessageBoxButton button = MessageBoxButton.OK;
                 MessageBoxImage icon = MessageBoxImage.Error;
-                MessageBoxResult result;
-                result = MessageBox.Show(errorMessage, caption, button, icon);
+                MessageBox.Show(errorMessage, caption, button, icon);
+                Usn.Text = String.Empty;
+                Psw.Password = String.Empty;
             }
-
         }
     }
 }
