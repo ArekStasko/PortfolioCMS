@@ -5,44 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PortfolioCMS"
         mc:Ignorable="d"
-        Title="Portfolio Posts" Height="800" Width="1350" Background="#0d1117">
+        ResizeMode="CanMinimize"
+        WindowStyle="SingleBorderWindow"
+        Title="Portfolio Posts" Height="500" Width="1000" Background="#0d1117">
     <Grid Margin="10">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="200"/>
         </Grid.ColumnDefinitions>
-        <ItemsControl Grid.Column="0" HorizontalAlignment="Left" Loaded="icPosts_Loaded" Name="icPosts" >
+        <ScrollViewer>
+        <ItemsControl Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Loaded="icPosts_Loaded" Name="icPosts" >
             <ItemsControl.ItemTemplate>
                 <DataTemplate>
-                    <WrapPanel Margin="10" Width="300" Height="350" Background="#161b22" TextBlock.Foreground="#f0f6fc">
+                    <WrapPanel Margin="10" Width="700" Height="350" Background="#161b22" TextBlock.Foreground="#f0f6fc">
                         <Grid>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="*" />
-                                <RowDefinition Height="40" />
-                                <RowDefinition Height="40" />
-                                <RowDefinition Height="60" />
-                                <RowDefinition Height="50" />
-                            </Grid.RowDefinitions>
-                            <Image Grid.Row="0" Stretch="Fill" Source="{Binding PhotoLink}" />
-                            <TextBlock Margin="5" Grid.Row="1" Text="{Binding Title}" FontWeight="Bold" FontSize="18" />
-                            <TextBlock Margin="3" Grid.Row="2" Text="{Binding SummaryDescription}" FontSize="16" TextWrapping="Wrap" />
-                            <TextBlock Margin="3" Grid.Row="3" Text="{Binding Description}" TextWrapping="Wrap" />
-                            <Grid Grid.Row="4">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="450" />
+                             </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0" Stretch="Fill" Source="{Binding PhotoLink}" />
+                                <Grid Grid.Column="1">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto" />
+                                        <RowDefinition Height="auto" />
+                                        <RowDefinition Height="auto" />
+                                    </Grid.RowDefinitions>
+                                    <TextBlock Margin="5" Grid.Row="0" Text="{Binding Title}" FontWeight="Bold" FontSize="18" />
+                                    <TextBlock Margin="3" Grid.Row="1"  Text="{Binding SummaryDescription}" FontSize="16" TextWrapping="Wrap" />
+                                    <TextBlock Margin="3" Grid.Row="2" Text="{Binding Description}" TextWrapping="Wrap" />
+                                </Grid>
+                                <Grid Margin="10" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Bottom">
                                 <Grid.ColumnDefinitions>
                                     <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="50" />
+                                    <ColumnDefinition Width="80" />
                                     <ColumnDefinition Width="50" />
                                     <ColumnDefinition Width="50" />
                                 </Grid.ColumnDefinitions>
-                                <Button Grid.Column="1" Width="40" Height="40" Content="Github" Foreground="#FFD9E6E6" Background="#21262d" BorderBrush="#FF75B6E7" Cursor="Hand" />
-                                <Button Tag="{Binding _id}" Click="EditPost_Click" Grid.Column="2" Width="40" Height="40" Content="Edit" Foreground="#FFD9E6E6" Background="#21262d" BorderBrush="#FF75B6E7" Cursor="Hand" />
-                                <Button Tag="{Binding _id}" Click="DeletePost_Click" Grid.Column="3" Width="40" Height="40" Content="Delete" Foreground="#FFD9E6E6" Background="#21262d" BorderBrush="#FF75B6E7" Cursor="Hand" />
-                            </Grid>
+                                <Button Grid.Column="1" Width="70" Height="40" Content="Github" Foreground="#FFD9E6E6" Background="#21262d" BorderBrush="#FF75B6E7" Cursor="Hand" FontWeight="Bold" FontSize="18" />
+                                <Button Tag="{Binding _id}" Click="EditPost_Click" Grid.Column="2" Width="40" Height="40" Foreground="#FFD9E6E6" Background="#21262d" BorderBrush="#FF75B6E7" FontSize="18" Cursor="Hand" FontFamily="Segoe MDL2 Assets">&#xE70F;</Button>
+                                <Button Tag="{Binding _id}" Click="DeletePost_Click" Grid.Column="3" Width="40" Height="40" Foreground="#FFD9E6E6" Background="#21262d" BorderBrush="#FF75B6E7" FontSize="18" Cursor="Hand" FontFamily="Segoe MDL2 Assets">&#xE74D;</Button>
+                                </Grid>
                         </Grid>
                     </WrapPanel>
                 </DataTemplate>
             </ItemsControl.ItemTemplate>
         </ItemsControl>
+        </ScrollViewer>
         <Grid Grid.Column="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="200"/>

@@ -34,15 +34,15 @@ namespace Presenters.Posts
             _service.UpdatePost(post);
         }
 
-        public void Create(string title, string sumDescription, string description, string GitLink, string? photoLink)
+        public void Create(List<string> data)
         {
             var post = new Post()
             {
-                Title = title,
-                SummaryDescription = sumDescription,
-                Description = description,
-                GithubLink = GitLink,
-                PhotoLink = photoLink ?? "https://res.cloudinary.com/daidpbgul/image/upload/v1643386473/depositphotos_318221368-stock-illustration-missing-picture-page-for-website_q0uwgh.jpg"
+                Title = data[0],
+                SummaryDescription = data[1],
+                Description = data[2],
+                GithubLink = data[3],
+                PhotoLink = data[4]
             };
             _service.InsertPost(post);
         }

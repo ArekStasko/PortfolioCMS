@@ -24,13 +24,6 @@ namespace PortfolioCMS
         private PostPresenters postPresenters = new PostPresenters("TestPosts");
         internal Post _post;
         private PostsView _postView;
-        private Guid _id;
-        private string _title;
-        private string _sumDescription;
-        private string _description;
-        private string _gitLink;
-        private string _imgLink;
-        public string TTitle = "Title CZy cos";
 
         public EditView(PostsView postView, Guid Id)
         {

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Presenters.Posts;
+using Data.Models;
 
 namespace PortfolioCMS
 {
@@ -21,11 +22,7 @@ namespace PortfolioCMS
     public partial class CreateView : Window
     {
         private PostsView _postView;
-        private string _title;
-        private string _sumDescription;
-        private string _description;
-        private string _gitLink;
-        private string _imgLink;
+
         public CreateView(PostsView postView)
         {
             InitializeComponent();
@@ -34,14 +31,17 @@ namespace PortfolioCMS
 
         private void Create_Click(object sender, RoutedEventArgs e)
         {
-            _title = Title.Text;
-            _sumDescription = SumDescription.Text;
-            _description = Description.Text;
-            _gitLink = GitLink.Text;
-            _imgLink = ImgLink.Text;
+            List<string> data = new List<string>()
+            {
+                Title.Text,
+                SumDescription.Text,
+                Description.Text,
+                GitLink.Text,
+                ImgLink.Text,
+            };
 
             var _postsPrezenters = new PostPresenters("TestPosts");
-            _postsPrezenters.Create(_title, _sumDescription, _description, _gitLink, _imgLink);
+            _postsPrezenters.Create(data);
             _postView.Load_Elements();
             this.Close();
         }

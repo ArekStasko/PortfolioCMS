@@ -3,6 +3,7 @@ using Presenters.Posts;
 using FluentAssertions;
 using System.Linq;
 using Data.Models;
+using System.Collections.Generic;
 
 namespace Presenters.Tests
 {
@@ -29,7 +30,16 @@ namespace Presenters.Tests
             string Description = "Description Description Description";
             string GithubLink = "LinkLinkLink";
 
-            _presenters.Create(Title, SummaryDescription, Description, GithubLink, null);
+            List<string> data = new List<string>()
+            {
+                Title,
+                SummaryDescription,
+                Description,
+                GithubLink, 
+                string.Empty
+            };
+
+            _presenters.Create(data);
             var posts = _presenters.GetAll().ToList();
             posts.Should().NotBeEmpty();
         }
@@ -44,7 +54,16 @@ namespace Presenters.Tests
             string Description = "Description Description Description";
             string GithubLink = "LinkLinkLink";
 
-            _presenters.Create(Title, SummaryDescription, Description, GithubLink, null);
+            List<string> data = new List<string>()
+            {
+                Title,
+                SummaryDescription,
+                Description,
+                GithubLink,
+                string.Empty
+            };
+
+            _presenters.Create(data);
             var post = _presenters.GetAll().Where(pst => pst.Title == Title).First();
             _presenters.Delete(post._id);
             var posts = _presenters.GetAll();
@@ -61,7 +80,16 @@ namespace Presenters.Tests
             string Description = "Description Description Description";
             string GithubLink = "LinkLinkLink";
 
-            _presenters.Create(Title, SummaryDescription, Description, GithubLink, null);
+            List<string> data = new List<string>()
+            {
+                Title,
+                SummaryDescription,
+                Description,
+                GithubLink,
+                string.Empty
+            };
+
+            _presenters.Create(data);
             var posts = _presenters.GetAll();
             posts.Should().NotBeEmpty();
         }
@@ -76,7 +104,16 @@ namespace Presenters.Tests
             string Description = "Description Description Description";
             string GithubLink = "LinkLinkLink";
 
-            _presenters.Create(Title, SummaryDescription, Description, GithubLink, null);
+            List<string> data = new List<string>()
+            {
+                Title,
+                SummaryDescription,
+                Description,
+                GithubLink,
+                string.Empty
+            };
+
+            _presenters.Create(data);
             var post = _presenters.GetAll().Where(pst => pst.Title == Title).First();
             post.Title = "elttsiTeT";
             post.SummaryDescription = "noitpircseD yrammuS";
