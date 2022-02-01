@@ -36,14 +36,13 @@ namespace Presenters.Posts
 
         public void Create(List<string> data)
         {
-            var post = new Post()
-            {
-                Title = data[0],
-                SummaryDescription = data[1],
-                Description = data[2],
-                GithubLink = data[3],
-                PhotoLink = data[4]
-            };
+            var post = new Post();
+            post.Title = data[0];
+            post.SummaryDescription = data[1];
+            post.Description = data[2];
+            post.GithubLink = data[3];
+            post.PhotoLink = data[4];
+            
             _service.InsertPost(post);
         }
 
