@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
-using Presenters.Posts;
+﻿using System.Windows;
+using Presenters.About;
+using Presenters.Factories;
 using Data.Models;
 
 namespace PortfolioCMS
@@ -21,7 +10,7 @@ namespace PortfolioCMS
     /// </summary>
     public partial class EditAboutMe : Window
     {
-        private AboutMePresenters aboutPresenters = new AboutMePresenters("TestPosts");
+        private IAboutMePresenters aboutPresenters = PresFactory.GetAboutPresentersInstance();
         private readonly AboutMe _about;
 
         public EditAboutMe()

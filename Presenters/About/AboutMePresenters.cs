@@ -5,15 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using Data.Services;
 using Data.Models;
+using Data.Factories;
 
-namespace Presenters.Posts
+namespace Presenters.About
 {
-    public class AboutMePresenters
+    public class AboutMePresenters : IAboutMePresenters
     {
         private AboutServices _service;
-        public AboutMePresenters(string db)
+        public AboutMePresenters()
         {
-            _service = new AboutServices(db);
+            _service = DataFactory.GetAboutServiceInstance("TestPosts");
         }
 
         public AboutMe GetAboutMe()

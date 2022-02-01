@@ -1,14 +1,15 @@
 ﻿using Data.Services;
+using Data.Factories;
 
 namespace Presenters.User
 {
-    public class UserPresenters
+    public class UserPresenters : IUserPresenters
     {
         private UserServices _service;
 
-        public UserPresenters(string db)
+        public UserPresenters()
         {
-            _service = new UserServices(db);
+            _service = DataFactory.GetUserServiceInstance("TestPosts");
         }
 
         public bool AuthenticateUser(string usr, string psw)

@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using Presenters.Posts;
+using Presenters.Factories;
 using Data.Models;
 
 namespace PortfolioCMS
@@ -21,7 +11,7 @@ namespace PortfolioCMS
     /// </summary>
     public partial class EditView : Window
     {
-        private PostPresenters postPresenters = new PostPresenters("TestPosts");
+        private IPostPresenters postPresenters = PresFactory.GetPostPresentersInstance();
         internal Post _post;
         private PostsView _postView;
 

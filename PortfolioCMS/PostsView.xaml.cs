@@ -3,16 +3,9 @@ using System.Collections.Generic;
 using Data.Models;
 using Presenters.Posts;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using Presenters.Factories;
 
 namespace PortfolioCMS
 {
@@ -23,7 +16,7 @@ namespace PortfolioCMS
     {
         private List<IPost> _posts;
         private Guid _id;
-        private PostPresenters _postsPrezenters;
+        private IPostPresenters _postsPrezenters;
 
         public IEnumerable<IPost> Posts
         {
@@ -46,7 +39,7 @@ namespace PortfolioCMS
         public PostsView()
         {
             InitializeComponent();
-            _postsPrezenters = new PostPresenters("TestPosts");
+            _postsPrezenters = PresFactory.GetPostPresentersInstance();
         }
 
         internal void Load_Elements()

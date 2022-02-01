@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Linq;
 using MongoDB.Driver;
 using MongoDB.Bson;
 using Data.Models;
@@ -10,14 +6,9 @@ using Data.Models;
 
 namespace Data.Services
 {
-    public class AboutServices
+    public class AboutServices : Service 
     {
-        private IMongoDatabase _database;
-        public AboutServices(string db)
-        {
-            var client = new MongoClient();
-            _database = client.GetDatabase(db);
-        }
+        public AboutServices(string db) : base(db) { }
 
         public AboutMe GetAboutMe()
         {

@@ -2,16 +2,17 @@
 using System.Collections.Generic;
 using Data.Models;
 using Data.Services;
+using Data.Factories;
 
 namespace Presenters.Posts
 {
-    public class PostPresenters
+    public class PostPresenters : IPostPresenters
     {
         private PostServices _service;
 
-        public PostPresenters(string db)
+        public PostPresenters()
         {
-            _service = new PostServices(db);
+            _service = DataFactory.GetPostServiceInstance("TestPosts");
         }
 
         public IEnumerable<IPost> GetAll()

@@ -1,20 +1,13 @@
-﻿using System.Security.Cryptography;
-using MongoDB.Driver;
-using MongoDB.Bson;
+﻿using MongoDB.Driver;
 using Data.Models;
 using Microsoft.AspNet.Identity;
 using System;
 
 namespace Data.Services
 {
-    public class UserServices
+    public class UserServices : Service
     {
-        private IMongoDatabase _database;
-        public UserServices(string db)
-        {
-            var client = new MongoClient();
-            _database = client.GetDatabase(db);
-        }
+        public UserServices(string db) : base(db) { }
 
         public bool CheckAuthentication(string username, string password)
         {

@@ -4,6 +4,7 @@ using FluentAssertions;
 using System.Linq;
 using Data.Models;
 using System.Collections.Generic;
+using Data.Factories;
 
 namespace Presenters.Tests
 {
@@ -23,7 +24,7 @@ namespace Presenters.Tests
         [Test]
         public void GetAll_ShouldReturn_AllPosts()
         {
-            var _presenters = new PostPresenters("DataTestPosts");
+            var _presenters = DataFactory.GetServiceInstance("DataTestPosts");
 
             string Title = "TeTisttle1";
             string SummaryDescription = "Summary Description";

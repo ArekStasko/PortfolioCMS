@@ -1,18 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using Presenters.Posts;
-using Data.Models;
+using Presenters.Factories;
 
 namespace PortfolioCMS
 {
@@ -40,7 +29,7 @@ namespace PortfolioCMS
                 ImgLink.Text,
             };
 
-            var _postsPrezenters = new PostPresenters("TestPosts");
+            IPostPresenters _postsPrezenters = PresFactory.GetPostPresentersInstance();
             _postsPrezenters.Create(data);
             _postView.Load_Elements();
             this.Close();

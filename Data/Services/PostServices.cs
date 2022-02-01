@@ -6,14 +6,10 @@ using MongoDB.Bson;
 
 namespace Data.Services
 {
-    public class PostServices
+    public class PostServices : Service
     {
-        private IMongoDatabase _database;
-        public PostServices(string db)
-        {
-            var client = new MongoClient();
-            _database = client.GetDatabase(db);
-        }
+        public PostServices(string db) : base(db) { }
+
         public List<Post> GetPosts()
         {
             var collection = GetPostsCollection();

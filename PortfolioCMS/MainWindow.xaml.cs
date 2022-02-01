@@ -1,19 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using Presenters.Posts;
 using Presenters.User;
+using Presenters.Factories;
 
 namespace PortfolioCMS
 {
@@ -36,7 +24,7 @@ namespace PortfolioCMS
 
         public void Login(object sender, RoutedEventArgs e)
         {
-            var userPresenters = new UserPresenters("TestPosts");
+            IUserPresenters userPresenters = PresFactory.GetUserPresentersInstance();
             userPresenters.AuthenticateUser(Usn.Text, Psw.Password);
             if (userPresenters.AuthenticateUser(Usn.Text, Psw.Password)) 
                 Login_Succeed();
