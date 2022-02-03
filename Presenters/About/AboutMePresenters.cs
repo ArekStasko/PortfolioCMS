@@ -14,7 +14,7 @@ namespace Presenters.About
         private AboutServices _service;
         public AboutMePresenters()
         {
-            _service = DataFactory.GetAboutServiceInstance("TestPosts");
+            _service = DataFactory.GetAboutServiceInstance("Portfolio");
         }
 
         public AboutMe GetAboutMe()

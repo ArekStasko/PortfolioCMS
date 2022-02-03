@@ -77,6 +77,6 @@ namespace PortfolioCMS
             var createView = new CreateView(this);
             createView.Show();
         }
-        
+
     }
 }

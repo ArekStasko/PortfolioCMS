@@ -9,7 +9,7 @@ namespace Presenters.User
 
         public UserPresenters()
         {
-            _service = DataFactory.GetUserServiceInstance("TestPosts");
+            _service = DataFactory.GetUserServiceInstance("Portfolio");
         }
 
         public bool AuthenticateUser(string usr, string psw)

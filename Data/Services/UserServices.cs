@@ -24,7 +24,10 @@ namespace Data.Services
                 {
                     return true;
                 }
-                return false;
+                else
+                {
+                    return false;
+                }
             }
             catch (Exception)
             {
@@ -32,6 +35,6 @@ namespace Data.Services
             }
         }
 
-        private IMongoCollection<User> GetUsersCollection() => _database.GetCollection<User>("Users");
+        private IMongoCollection<User> GetUsersCollection() => _database.GetCollection<User>("User");
     }
 }

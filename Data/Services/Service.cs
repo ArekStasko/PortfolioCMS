@@ -2,6 +2,7 @@
 using MongoDB.Driver;
 using MongoDB.Bson;
 using Data.Models;
+using System.Configuration;
 
 namespace Data.Services
 {
@@ -10,7 +11,8 @@ namespace Data.Services
         protected IMongoDatabase _database;
         public Service(string db)
         {
-            var client = new MongoClient();
+            var credential = new credentials();
+            var client = new MongoClient(credential.MNG);
             _database = client.GetDatabase(db);
         }
     }

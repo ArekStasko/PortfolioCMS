@@ -12,7 +12,7 @@ namespace Presenters.Posts
 
         public PostPresenters()
         {
-            _service = DataFactory.GetPostServiceInstance("TestPosts");
+            _service = DataFactory.GetPostServiceInstance("Portfolio");
         }
 
         public IEnumerable<IPost> GetAll()
