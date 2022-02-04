@@ -26,6 +26,7 @@ namespace PortfolioCMS
             _about.Title = Title.Text;
             _about.AboutDescription = Description.Text;
             _about.AboutSkills = AboutSkills.Text;
+            _about.PhotoLink = ImgLink.Text;
 
             aboutPresenters.Update(_about);
             this.Close();

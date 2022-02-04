@@ -28,6 +28,7 @@ namespace Presenters.About
             aboutMe.Title = data[0];
             aboutMe.AboutDescription = data[1];
             aboutMe.AboutSkills = data[2];
+            aboutMe.PhotoLink = data[3];
 
             _service.CreateAboutMe(aboutMe);
         }
